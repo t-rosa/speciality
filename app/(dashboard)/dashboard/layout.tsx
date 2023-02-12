@@ -22,7 +22,8 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
         <Link href="profile">
           <UserAvatar
             user={{
-              name: user.name,
+              firstName: user.firstName,
+              lastName: user.lastName,
               image: user.image,
             }}
           />
