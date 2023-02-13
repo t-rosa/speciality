@@ -30,10 +30,10 @@ export const authOptions: NextAuthOptions = {
     async session({ token, session }) {
       if (token) {
         session.user.id = token.id;
-        session.user.firstName = token.firstName;
-        session.user.lastName = token.lastName;
-        session.user.email = token.email;
-        session.user.image = token.picture;
+        session.user.firstName = token.firstName as string | null;
+        session.user.lastName = token.lastName as string | null;
+        session.user.email = token.email as string;
+        session.user.image = token.picture as string | null;
       }
 
       return session;
@@ -41,12 +41,12 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       const dbUser = await db.user.findFirst({
         where: {
-          email: token.email,
+          email: token.email as string,
         },
       });
 
       if (!dbUser) {
-        token.id = user.id;
+        token.id = user!.id;
         return token;
       }
 

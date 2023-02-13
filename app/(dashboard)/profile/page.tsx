@@ -12,7 +12,14 @@ export default async function ProfilePage() {
 
   return (
     <div className="grid place-items-center h-full">
-      <UserNameForm user={{ id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email }} />
+      <UserNameForm
+        user={{
+          id: user.id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+        }}
+      />
     </div>
   );
 }
