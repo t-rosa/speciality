@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/)
-
 ## Getting Started
 
 First, install dependencies and setup env variables:
