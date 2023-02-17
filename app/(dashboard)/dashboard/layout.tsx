@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PropsWithChildren } from "react";
 
-import { UserAvatar } from "@/components/dashboard/user-avatar";
 import { getCurrentUser } from "@/lib/session";
+import { UserAccountNav } from "@/components/dashboard/user-account-nav";
 
 export default async function DashboardLayout({ children }: PropsWithChildren) {
   const user = await getCurrentUser();
@@ -21,15 +20,14 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
           </div>
           <div className="text-sm text-gray-500">Mardi 7 Janvier</div>
         </div>
-        <Link href="profile">
-          <UserAvatar
-            user={{
-              firstName: user.firstName,
-              lastName: user.lastName,
-              image: user.image,
-            }}
-          />
-        </Link>
+        <UserAccountNav
+          user={{
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            image: user.image,
+          }}
+        />
       </header>
       <main className="row-[2/3] col-[1/2]">{children}</main>
     </>
