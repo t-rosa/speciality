@@ -1,12 +1,14 @@
+import { Toaster } from "@/components/ui/toaster";
+import "@/styles/globals.css";
 import type { PropsWithChildren } from "react";
 
-import { Toaster } from "@/components/ui/toaster";
-
-import "@/styles/globals.css";
+export const metadata = {
+  title: "Speciality"
+}
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head />
       <body>
         {children}

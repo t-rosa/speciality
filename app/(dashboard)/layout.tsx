@@ -1,10 +1,10 @@
 import type { PropsWithChildren } from "react";
 
+import { NewProjectDialog } from "@/components/dashboard/new-project-dialog";
+import { Button } from "@/components/ui/button";
 import { Check, Home, List, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
-import { NewProjectDialog } from "@/components/dashboard/new-project-dialog";
-import { Button } from "@/components/ui/button";
 
 export default function DashboardRootLayout({ children }: PropsWithChildren) {
   return (

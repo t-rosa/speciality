@@ -40,3 +40,6 @@ next-env.d.ts
 
 # Docker volume
 /postgresql
+
+# vscode
+.vscode
