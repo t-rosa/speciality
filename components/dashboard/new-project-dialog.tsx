@@ -18,7 +18,7 @@ export function NewProjectDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="rounded-full w-14 h-14">
+        <Button className="h-14 w-14 rounded-full">
           <Plus />
         </Button>
       </DialogTrigger>

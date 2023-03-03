@@ -6,7 +6,7 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Header title="Mon Compte" />
-      <main className="row-[2/3] col-[1/2]">{children}</main>
+      <main className="col-[1/2] row-[2/3]">{children}</main>
     </>
   );
 }

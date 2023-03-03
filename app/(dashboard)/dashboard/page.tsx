@@ -1,3 +1,3 @@
 export default async function DashboardPage() {
-  return <div>bonjour</div>
+  return <div>bonjour</div>;
 }

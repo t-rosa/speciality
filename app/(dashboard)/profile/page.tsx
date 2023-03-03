@@ -11,7 +11,7 @@ export default async function ProfilePage() {
   }
 
   return (
-    <div className="grid place-items-center h-full">
+    <div className="grid h-full place-items-center">
       <UserNameForm
         user={{
           id: user.id,

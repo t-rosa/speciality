@@ -20,10 +20,10 @@ export default withAuth(
       if (isAuthenticated) {
         return NextResponse.redirect(new URL("/dashboard", req.url));
       }
-      return null
+      return null;
     }
 
-    if(!isAuthenticated) {
+    if (!isAuthenticated) {
       return NextResponse.redirect(new URL("/signin", req.url));
     }
   },

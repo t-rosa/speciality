@@ -3,8 +3,8 @@ import "@/styles/globals.css";
 import type { PropsWithChildren } from "react";
 
 export const metadata = {
-  title: "Speciality"
-}
+  title: "Speciality",
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (

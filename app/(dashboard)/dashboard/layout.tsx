@@ -13,7 +13,7 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
 
   return (
     <>
-      <header className="col-[1/2] row-[1/2] border-b flex justify-between items-center px-3">
+      <header className="col-[1/2] row-[1/2] flex items-center justify-between border-b px-3">
         <div>
           <div>
             {user.firstName} {user.lastName}
@@ -29,7 +29,7 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
           }}
         />
       </header>
-      <main className="row-[2/3] col-[1/2]">{children}</main>
+      <main className="col-[1/2] row-[2/3]">{children}</main>
     </>
   );
 }
