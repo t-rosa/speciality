@@ -21,8 +21,7 @@ model Account {
   scope             String?
   id_token          String? @db.Text
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -58,47 +57,34 @@ model VerificationToken {
 }
 
 model Project {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  owner   User   @relation(fields: [ownerId], references: [id])
-  ownerId String
-
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  owner       User      @relation(fields: [ownerId], references: [id])
+  ownerId     String
   name        String
   description String?
-
-  startDate DateTime
-  endDate   DateTime
-
-  deleted Boolean @default(false)
-
-  tasks Task[]
+  due         DateTime?
+  deleted     Boolean   @default(false)
+  tasks       Task[]
 
   @@unique([ownerId, name])
   @@index([ownerId, id])
 }
 
 model Task {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  owner   User   @relation(fields: [ownerId], references: [id])
-  ownerId String
-
-  project   Project @relation(fields: [projectId], references: [id])
-  projectId String
-
-  status      TaskStatus
-  name        String
-  description String?
-
-  startDate DateTime
-  endDate   DateTime?
-
-  deleted Boolean @default(false)
-
+  id            String         @id @default(cuid())
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  owner         User           @relation(fields: [ownerId], references: [id])
+  ownerId       String
+  project       Project        @relation(fields: [projectId], references: [id])
+  projectId     String
+  status        TaskStatus
+  name          String
+  description   String?
+  due           DateTime?
+  deleted       Boolean        @default(false)
   notifications Notification[]
 
   @@index([ownerId])
